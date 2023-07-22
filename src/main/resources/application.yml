@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: serviceA
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888
+
+configtest:
+  y: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans
